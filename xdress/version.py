@@ -37,7 +37,9 @@ def report_versions():
 # XDress
 #
 
-xdress_version = '0.5-dev'
+# '0.5-dev' causes userwarning when building the program
+# changed to '0.5dev0' instead
+xdress_version = '0.5dev0' 
 xdress_version_info = version_info(0, 5, 0, 'dev')
 
 #
