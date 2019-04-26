@@ -73,9 +73,33 @@ __Pre-requisites__
     6. The above, if successful, will have created an LLVM.sln file in the build directory
     7. Build the project with MSVS 2017. On the toolbar, select CMake -> Build Only -> LLVM 
         * this is taking a long time (>30 min)
+        * lesson learned, don't build the 'debug' version. build the release version instead. the size of the build was massive and I stopped at 50 Gigs of space
+
+    ...
+
+    * Ended up just installing the pre-build binaries for Windows
+        * Added the binary to my path for my user only
 
 
 ### Build (or install?) CastXML
 1. clone from https://github.com/CastXML/CastXML.git to 'C:\\lib\\CastXML'
+    * had trouble with the basic project above. Switched and cloned from https://github.com/CastXML/CastXMLSuperbuild.git
+    * still had problems with it... maybe I can get away with just CLANG?
+    * possibly can download the .exe from https://data.kitware.com/#collection/57b5c9e58d777f126827f5a1/folder/57b5de948d777f10f2696370 
+    * kind of exploring if I can get gccXLM working even if I can't get cast
+        * in Developer Prompt
+        ```
+        cd C:\lib
+        mkdir gccXML
+        cd gccXML
+        git clone git://github.com/gccxml/gccxml.git
+        mkdir build
+        cd build
+        cmake ../
+        ```
+        * running solution in VS2017...
+            * ========== Build: 13 succeeded, 24 failed, 0 up-to-date, 7 skipped ==========
 
 
+### Doxygen
+* also downloaded and ran a Doxygen installer to 'C:\\lib\\' for completeness
