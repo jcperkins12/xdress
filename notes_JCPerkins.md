@@ -11,6 +11,21 @@ __Python__
 * python version  = 3.7.2
 * have python dependancies installed (pycparser, Cython, lxml)
 
+
+## Installing xdress
+1. Start in the xdress root directory
+2. Building xDress won't work unless you plan on running it out of that directory every time. Use install instead
+    ```
+    python setup.py install
+    ```
+    * If one of the first lines is 'Disabling clang since llvm-config not found: tried llvm-config, llvm-config-3.5, llvm-config-3.4, llvm-config-3.3, llvm-config-3.2'. Then stop and make sure that CLang is installed correctly, otherwise the cythongen portion will not work.
+        * note: I had to compile LLVM from source to get the llvm-config to work. The prebuilt binary didn't have this command
+    * typing the following commands into a command prompt should both return with a path to the executables. If not, verify your install and that the the commands are on the system path
+    ```
+    where llvm-config
+    where clang
+    ```
+
 ## Steps for STL Wrapping portion of Tutorial
 1. Try to build the program
     ```
@@ -69,13 +84,13 @@ __Pre-requisites__
     4. `cd build`
     5. If you are using Visual Studio 2017: 
         ```
-        cmake -DLLVM_ENABLE_PROJECTS=clang -G "Visual Studio 15 2017" -A x64 -Thost=x64 ..\llvm -Thost=x64 
+        cmake -DLLVM_ENABLE_PROJECTS=clang -G "Visual Studio 15 2017" -A x64 -Thost=x64 ..\llvm
         ```
-        is required, since the 32-bit linker will run out of memory.
+        -Thost=x64 is required, since the 32-bit linker will run out of memory.
         * To generate x86 binaries instead of x64, pass -A Win32.
     6. The above, if successful, will have created an LLVM.sln file in the build directory
-    7. Build the project with MSVS 2017. On the toolbar, select CMake -> Build Only -> LLVM 
-        * this is taking a long time (>30 min)
+    7. Build the 'INSTALL' project with MSVS 2017. On the Solution explorer, find the 'INSTALL' project and right-click on it. select 'build'
+        * this takes a long time (>3 hrs)
         * lesson learned, don't build the 'debug' version. build the release version instead. the size of the build was massive and I stopped at 50 Gigs of space
 
     ...
