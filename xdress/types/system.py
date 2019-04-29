@@ -257,7 +257,7 @@ import os
 import io
 import sys
 from contextlib import contextmanager
-from collections import Sequence, Set, Iterable, Mapping
+from collections.abc import Sequence, Set, Iterable, Mapping
 from numbers import Number
 from pprint import pformat
 from warnings import warn

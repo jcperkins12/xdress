@@ -16,9 +16,9 @@ __Python__
     ```
     python setup.py build
     ```
-2. move directory to `testXdress\mypack`
+2. move directory to `testXdress\mypack_stlwrap`
     ```
-    cd mypack
+    cd tutorial\mypack_stlwrap
     ```
 3. Run try running the STLWrapper run control file (simplest case)
     ```
@@ -32,12 +32,15 @@ __Python__
     ```
     -- xdress installs successfully
     ```
-    cd mypack
+    cd tutorial\mypack_stlwrap
     xdress
     ```
-    -- Successfull run... tests don't work though....
+    -- Successfull run... 
 
     * note: there was a warning about the import method becoming depreciated, so I went in to fix it, reinstalled and reran it to make sure that it worked. 
+
+4. In order to test the result, I need to figure out how to compile the cython code
+    * put a setup.py file in the directory, but it is not finished yet
 
 ## Steps for CythonGen portion of Tutorial
 
@@ -102,4 +105,8 @@ __Pre-requisites__
 
 
 ### Doxygen
-* also downloaded and ran a Doxygen installer to 'C:\\lib\\' for completeness
+* also downloaded Doxygen installer and installed to 'C:\\lib\\' for completeness
+
+### Running xDress
+1. start in the mypack_cythongen directory
+2. 

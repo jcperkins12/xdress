@@ -1,5 +1,5 @@
-package = 'mypack'     # top-level python package name
-packagedir = 'mypack'  # location of the python package
+package = 'mypack_stlwrap'     # top-level python package name
+packagedir = 'mypack_stlwrap'  # location of the python package
 
 stlcontainers = [
     ('vector', 'str'),

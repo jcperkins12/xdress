@@ -43,3 +43,4 @@ mypack/mypack/*.pyx
 mypack/mypack/xdress_extra_types.h
 mypack/mypack/tests/test_stlcontainers.py
 mypack/mypack/tests/test_dtypes.py
+.vscode/

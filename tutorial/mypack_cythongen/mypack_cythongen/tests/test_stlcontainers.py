@@ -16,7 +16,7 @@ import os
 import numpy  as np
 from collections import Container, Mapping
 
-from mypack import stlcontainers
+from mypack_cythongen import stlcontainers
 
 
 # Vector Str
